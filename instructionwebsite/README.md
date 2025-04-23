@@ -5,7 +5,7 @@ En instruktionshemsida för kursen Webbutveckling2
 Instruktionsida : Hur man gör en egen AI chatbot
 
 första lektion
-Planering av ämne, webbsida och process. Startade ett github repostory, skapa tidig struktur i html och css och förberedde med bra filsortering
+Planering av ämne, webbsida och process. Startade ett github repository, skapa tidig struktur i html och css och förberedde med bra filsortering
 
 Min plan är att använda ramverket React och animationsbiblioteket framer motion (exklusivt för React). Jag gjorde även en sketch på hur sidan skulle se ut med hjälp av referenser från andra instruktions webbsidor och välgjorda sidor.
 
