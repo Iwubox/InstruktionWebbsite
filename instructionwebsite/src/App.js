@@ -5,7 +5,7 @@ function App() {
     <div className="app">
       <div className="navbar">
         <div className="navLeft">
-          <div className="logo">dwasd</div>
+          <div className="logo">Sigma Bar</div>
         </div>
         <div className="navRight">
           <div className="navItem">
@@ -16,6 +16,9 @@ function App() {
           </div>
           <div className="navItem">
             <p>Contact</p>
+          </div>
+          <div className="hamburger">
+            <img></img>
           </div>
         </div>
       </div>

@@ -9,8 +9,8 @@ html {
 .navbar {
   display: flex;
   justify-content: space-between;
-  background-color: #282c34;
   height: 3.5rem;
+  border-bottom: rgb(234, 234, 234) 0.01rem solid;
 }
 
 .navLeft {
@@ -61,4 +61,10 @@ html {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+}
+
+@media screen and (max-width: 600px) {
+  .navItem {
+    display: none;
+  }
 }
