@@ -10,7 +10,7 @@ html {
   display: flex;
   justify-content: space-between;
   background-color: #282c34;
-  height: 2.25rem;
+  height: 3.5rem;
 }
 
 .navLeft {
@@ -36,4 +36,8 @@ html {
   height: 100%;
   width: 10rem;
   transform: skew(-30deg);
+}
+
+.navItem p {
+  transform: skew(30deg);
 }

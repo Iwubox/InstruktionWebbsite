@@ -5,12 +5,18 @@ function App() {
     <div className="app">
       <div className="navbar">
         <div className="navLeft">
-          <div className="logo">logo here</div>
+          <div className="logo">logo</div>
         </div>
         <div className="navRight">
-          <div className="navItem">Home</div>
-          <div className="navItem">About</div>
-          <div className="navItem">Contact</div>
+          <div className="navItem">
+            <p>Home</p>
+          </div>
+          <div className="navItem">
+            <p>About</p>
+          </div>
+          <div className="navItem">
+            <p>Contact</p>
+          </div>
         </div>
       </div>
     </div>
