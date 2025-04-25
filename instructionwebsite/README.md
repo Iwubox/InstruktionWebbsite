@@ -17,3 +17,8 @@ Målet är att skapa en instruktions webbsida med bra läsbarhet och känsla. In
 
 Målgrupp -
 Målgruppen är folk som vill lära sig om AI och hur man skulle vilja göra en egen. Detta är oftast män som är vuxna och jobbar inom IT branschen.
+
+lektion 4/23
+Förtsätt med design av websidan och tog reda på hur man skapar en egen chatbot
+Ai chatbot med Rasa AI Enginen för att den är gratis, open source och har få restriktioner.
+För botten bygger jag den med node.js på webben.
