@@ -16,10 +16,11 @@ html {
 .navLeft {
   display: flex;
   align-items: center;
+  justify-content: center;
   height: 100%;
-  background-color: red;
-  transform: skew(-30deg);
-  width: 20rem;
+  background-image: linear-gradient(to bottom right, #fceeb5 0%, #ee786e 100%);
+  transform: skew(-20deg) translateX(-1rem);
+  width: 15rem;
 }
 
 .navRight {
@@ -30,14 +31,24 @@ html {
 }
 
 .navItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: white;
   background-color: aquamarine;
   text-decoration: none;
   height: 100%;
-  width: 10rem;
-  transform: skew(-30deg);
+  width: 7.5rem;
+  transform: skew(-20deg) translateX(1rem);
+}
+
+.navItem:hover {
+  background-image: linear-gradient(to bottom right, #fceeb5 0%, #ee786e 100%);
+  transition: background-image 1 s ease-in-out;
+  color: rgb(255, 235, 207);
 }
 
 .navItem p {
-  transform: skew(30deg);
+  transform: skew(20deg);
+  background: linear-gradient(to bottom right, #fceeb5 0%, #ee786e 100%);
 }

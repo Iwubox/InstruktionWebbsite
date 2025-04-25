@@ -5,7 +5,7 @@ function App() {
     <div className="app">
       <div className="navbar">
         <div className="navLeft">
-          <div className="logo">logo</div>
+          <div className="logo">dwasd</div>
         </div>
         <div className="navRight">
           <div className="navItem">
