@@ -35,7 +35,6 @@ html {
   align-items: center;
   justify-content: center;
   color: white;
-  background-color: aquamarine;
   text-decoration: none;
   height: 100%;
   width: 7.5rem;
@@ -45,10 +44,21 @@ html {
 .navItem:hover {
   background-image: linear-gradient(to bottom right, #fceeb5 0%, #ee786e 100%);
   transition: background-image 1 s ease-in-out;
-  color: rgb(255, 235, 207);
+}
+
+.navItem:hover p {
+  background: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 .navItem p {
   transform: skew(20deg);
   background: linear-gradient(to bottom right, #fceeb5 0%, #ee786e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
