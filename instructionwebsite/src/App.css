@@ -10,23 +10,30 @@ html {
   display: flex;
   justify-content: space-between;
   background-color: #282c34;
-  padding: 0.5rem;
+  height: 2.25rem;
 }
 
 .navLeft {
   display: flex;
   align-items: center;
+  height: 100%;
+  background-color: red;
+  transform: skew(-30deg);
+  width: 20rem;
 }
 
 .navRight {
   display: flex;
   align-items: center;
   flex-direction: row;
-  background-color: red;
+  height: 100%;
 }
 
 .navItem {
   color: white;
+  background-color: aquamarine;
   text-decoration: none;
   height: 100%;
+  width: 10rem;
+  transform: skew(-30deg);
 }
