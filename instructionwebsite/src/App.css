@@ -6,6 +6,7 @@ html {
 .app {
 }
 
+/* Navbar ------------------------------------------------ */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -63,8 +64,24 @@ html {
   color: transparent;
 }
 
+.hamburgerMenu {
+  display: none;
+}
+
 @media screen and (max-width: 600px) {
   .navItem {
     display: none;
   }
+
+  .hamburgerMenu {
+    display: flex;
+    width: 2rem;
+    height: 80%;
+    margin-right: 1rem;
+  }
 }
+
+@media screen and (max-width: 320px) {
+}
+
+/* instructions ------------------------------------------------ */
