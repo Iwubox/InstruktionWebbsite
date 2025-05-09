@@ -8,10 +8,13 @@ html {
 
 /* Navbar ------------------------------------------------ */
 .navbar {
+  position: fixed;
   display: flex;
   justify-content: space-between;
   height: 3.5rem;
+  width: 100%;
   border-bottom: rgb(234, 234, 234) 0.01rem solid;
+  top: 0;
 }
 
 .navLeft {
@@ -40,6 +43,7 @@ html {
   height: 100%;
   width: 7.5rem;
   transform: skew(-20deg) translateX(1rem);
+  cursor: pointer;
 }
 
 .navItem:hover {
@@ -78,6 +82,7 @@ html {
     width: 2rem;
     height: 80%;
     margin-right: 1rem;
+    cursor: pointer;
   }
 }
 
