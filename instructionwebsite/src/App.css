@@ -72,6 +72,21 @@ html {
   display: none;
 }
 
+.hamburgerList {
+  display: none;
+  position: fixed;
+  width: 20%;
+  height: 40%;
+  top: 3.5rem;
+  right: 0;
+  clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+  background-color: red;
+}
+
+.hambItem{
+
+}
+
 @media screen and (max-width: 600px) {
   .navItem {
     display: none;
