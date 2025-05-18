@@ -124,11 +124,12 @@ html {
   width: 100%;
   height: 70rem;
   display: flex;
+  flex-direction: column;
 }
 
 .introMegaTextCointainer{
   width: 100%;
-  height: 10rem;
+  height: 40%;
   background-color: blue;
   display: flex;
   justify-content: center;
@@ -141,21 +142,65 @@ html {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+}
 
+.MT1{
+  background-color: red;
+}
+
+.MT2{
 }
 
 .whereRU{
-
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 3%;
+  top: 20%;
 }
 
 .introFunFact{
+  position: absolute;
+  width: 17.5%;
+  height: 40%;
+  background-color: red;
+  right: 1.5%;
+  top: 20%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.introFunFactImg{
+  width: 90%;
+  height: 60%;
+  background-color: beige;
+}
+
+.introFunFactText{
+  width: 90%;
+  height: 30%;
+  background-color: green;
 
 }
 
 .chatBotExample{
-
+  width: 100%;
+  height: 60%;
+  background-color: aquamarine;
+  display: flex;
+  align-items: last baseline;
+  justify-content: center;
 }
 
+.chatBotBox{
+  background-color: #ee786e;
+  width: 50%;
+  height: 80%;
+}
 
 
 /* instructions ------------------------------------------------ */

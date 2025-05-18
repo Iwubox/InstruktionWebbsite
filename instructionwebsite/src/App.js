@@ -71,6 +71,7 @@ function App() {
       </div>
 
       <div className="banner">
+
         <div className="introMegaTextCointainer">
         <div className="introMegaText">
           <div className="MT1"><p>Making your own</p></div>
@@ -86,16 +87,18 @@ function App() {
       </div>
 
       <div className="introFunFact">
-        <div>
-          <img></img>
+        <div className="introFunFactImg">
+          <img alt="img here"></img>
         </div>
-        <div>
-          <p></p>
+        <div className="introFunFactText">
+          <p>text discrip</p>
         </div>
       </div>
 
       <div className="chatBotExample">
+        <div className="chatBotBox">
         <p></p>
+        </div>
       </div>
       </div>
 
