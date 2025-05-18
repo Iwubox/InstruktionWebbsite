@@ -102,7 +102,24 @@ function App() {
       </div>
       </div>
 
+    <div className="overview">
+      <div className="overviewContent">
+        <div className="overviewTextBox">
+        <p>text here</p>
+        </div>
+        
+        <div className="overviewRight">
+        <div className="walk">
+          <video alt="walkthough video"></video>
+        </div>
 
+        <div className="overviewPicture">
+          <img alt="img about something"></img>
+        </div>
+        </div>
+
+      </div>
+    </div>
 
 
 
@@ -110,4 +127,13 @@ function App() {
   );
 }
 
+
+/* Overview explaination: 
+
+
+
+
+
+ Walkthrough
+*/
 export default App;
