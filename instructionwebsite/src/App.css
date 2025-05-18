@@ -75,12 +75,16 @@ html {
 .hamburgerList {
   display: none;
   position: fixed;
-  width: 20%;
-  height: 40%;
+  width: 30%;
+  height: 0%;
   top: 3.5rem;
   right: 0;
   clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
   background-color: red;
+  justify-content: top;
+  align-items: center;
+  flex-direction: column;
+
 }
 
 .hambItem{
