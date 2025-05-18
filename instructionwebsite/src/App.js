@@ -1,5 +1,6 @@
 import "./App.css";
 import { useState } from "react";
+import { motion } from "motion/react"
 
 //imges
 import hamburgerPNG from "./resorces/hambugerMenu.png";
@@ -76,8 +77,8 @@ function App() {
         <div className="introMegaText">
           <div className="MT1"><p>Making your own</p></div>
           <div className="MT2"><p>AI chatbot</p></div>
-        </div>
-        </div>
+            </div>
+    </div>
 
       <div className="whereRU">
         <div><p>Introduction</p></div>
@@ -128,9 +129,15 @@ function App() {
 }
 
 
-/* Overview explaination: 
+/* 
+Framer motion 
+Paralax = scroll functioner
 
 
+
+Overview explaination: 
+
+  Huggin face för att hitta stack
 
 
 
