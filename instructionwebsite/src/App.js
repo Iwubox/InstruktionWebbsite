@@ -71,10 +71,37 @@ function App() {
       </div>
 
       <div className="banner">
+        <div className="introMegaTextCointainer">
+        <div className="introMegaText">
+          <div className="MT1"><p>Making your own</p></div>
+          <div className="MT2"><p>AI chatbot</p></div>
+        </div>
+        </div>
+
+      <div className="whereRU">
+        <div><p>Introduction</p></div>
+        <div><p>Overview</p></div>
+        <div><p>Getting Started</p></div>
+        <div><p>Next Steps</p></div>
+      </div>
+
+      <div className="introFunFact">
         <div>
-          <p>Making your own AI chatbot</p>
+          <img></img>
+        </div>
+        <div>
+          <p></p>
         </div>
       </div>
+
+      <div className="chatBotExample">
+        <p></p>
+      </div>
+      </div>
+
+
+
+
 
     </div>
   );
