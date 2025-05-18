@@ -13,7 +13,6 @@ html {
   justify-content: space-between;
   height: 3.5rem;
   width: 100%;
-  border-bottom: rgb(234, 234, 234) 0.01rem solid;
   top: 0;
 }
 
@@ -25,6 +24,15 @@ html {
   background-image: linear-gradient(to bottom right, #fceeb5 0%, #ee786e 100%);
   transform: skew(-20deg) translateX(-1rem);
   width: 15rem;
+}
+
+.logo{
+  transform: skew(20deg);
+  background-image: linear-gradient(to bottom right, #ffffff 0%, #ffc3be 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 .navRight {
@@ -108,4 +116,15 @@ html {
 @media screen and (max-width: 320px) {
 }
 
+/*banner --------------------- */
+
+.banner{
+  margin-top: 3.5rem;
+  background-color: red;
+  width: 100%;
+  height: 70rem;
+}
+
 /* instructions ------------------------------------------------ */
+
+

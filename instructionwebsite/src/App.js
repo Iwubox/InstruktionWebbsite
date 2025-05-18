@@ -4,6 +4,12 @@ import { useState } from "react";
 //imges
 import hamburgerPNG from "./resorces/hambugerMenu.png";
 
+
+/*TODO 
+Ändra get elementByClassName
+
+
+*/
 function App() {
   let flipflop = true;
   let hamburgerMenu = () => {
@@ -35,7 +41,7 @@ function App() {
     <div className="app">
       <div className="navbar">
         <div className="navLeft">
-          <div className="logo">Sigma Bar</div>
+          <div className="logo">RoboYap</div>
         </div>
         <div className="navRight">
           <div className="navItem">
@@ -57,36 +63,19 @@ function App() {
               <div className="hambItem">
                 <p>About</p>
               </div>
-              < div className="HambItem">
+              < div className="hambItem">
                 <p>Contact</p>
               </div>
             </div>
         </div>
       </div>
-      <p>wwww</p>
-      <p>hdhwa</p>
-      <p>hdhwa</p>
-      <p>hdhwa</p>
-      <p>hdhwa</p>
-      <p>hdhwa</p>
-      <p>wwww</p>
-      <p>hdhwa</p>
-      <p>hdhwa</p>
-      <p>hdhwa</p>
-      <p>hdhwa</p>
-      <p>hdhwa</p>
-      <p>hdhwa</p>
-      <p>hdhwa</p>
-      <p>hdhwa</p>
-      <p>hdhwa</p>
-      <p>hdhwa</p>
-      <p>hdhwa</p>
-      <p>hdhwa</p>
-      <p>hdhwa</p>
-      <p>hdhwa</p>
-      <p>hdhwa</p>
-      <p>hdhwa</p>
-      <p>hdhwa</p>
+
+      <div className="banner">
+        <div>
+          <p>Making your own AI chatbot</p>
+        </div>
+      </div>
+
     </div>
   );
 }
