@@ -1,10 +1,9 @@
 import "./App.css";
 import { useState } from "react";
-import { motion } from "motion/react"
+import { motion } from "motion/react";
 
 //imges
 import hamburgerPNG from "./resorces/hambugerMenu.png";
-
 
 /*TODO 
 Ändra get elementByClassName
@@ -23,7 +22,6 @@ function App() {
 
       hamburgerList.style.display = "flex";
       hamburgerList.style.rotate = "0deg";
-
 
       flipflop = false;
     } else if (flipflop == false) {
@@ -58,76 +56,82 @@ function App() {
             <img src={hamburgerPNG} alt="hamburger menu"></img>
           </div>
           <div className="hamburgerList">
-              <div className="hambItem">
-                <p>Home</p>
-              </div>
-              <div className="hambItem">
-                <p>About</p>
-              </div>
-              < div className="hambItem">
-                <p>Contact</p>
-              </div>
+            <div className="hambItem">
+              <p>Home</p>
             </div>
+            <div className="hambItem">
+              <p>About</p>
+            </div>
+            <div className="hambItem">
+              <p>Contact</p>
+            </div>
+          </div>
         </div>
       </div>
 
       <div className="banner">
-
         <div className="introMegaTextCointainer">
-        <div className="introMegaText">
-          <div className="MT1"><p>Making your own</p></div>
-          <div className="MT2"><p>AI chatbot</p></div>
+          <div className="introMegaText">
+            <div className="MT1">
+              <p>Making your own</p>
             </div>
-    </div>
+            <div className="MT2">
+              <p>AI chatbot</p>
+            </div>
+          </div>
+        </div>
 
-      <div className="whereRU">
-        <div><p>Introduction</p></div>
-        <div><p>Overview</p></div>
-        <div><p>Getting Started</p></div>
-        <div><p>Next Steps</p></div>
+        <div className="whereRU">
+          <div>
+            <p>Introduction</p>
+          </div>
+          <div>
+            <p>Overview</p>
+          </div>
+          <div>
+            <p>Getting Started</p>
+          </div>
+          <div>
+            <p>Next Steps</p>
+          </div>
+        </div>
+
+        <div className="introFunFact">
+          <div className="introFunFactImg">
+            <img alt="img here"></img>
+          </div>
+          <div className="introFunFactText">
+            <p>text discrip</p>
+          </div>
+        </div>
+
+        <div className="chatBotExample">
+          <div className="chatBotBox">
+            <p></p>
+          </div>
+        </div>
       </div>
 
-      <div className="introFunFact">
-        <div className="introFunFactImg">
-          <img alt="img here"></img>
-        </div>
-        <div className="introFunFactText">
-          <p>text discrip</p>
+      <div className="overview">
+        <div className="overviewContent">
+          <div className="overviewTextBox">
+            <p>text here</p>
+          </div>
+
+          <div className="overviewRight">
+            <div className="walk">
+              <video alt="walkthough video"></video>
+            </div>
+
+            <div className="overviewPicture">
+              <img alt="img about something"></img>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div className="chatBotExample">
-        <div className="chatBotBox">
-        <p></p>
-        </div>
-      </div>
-      </div>
-
-    <div className="overview">
-      <div className="overviewContent">
-        <div className="overviewTextBox">
-        <p>text here</p>
-        </div>
-        
-        <div className="overviewRight">
-        <div className="walk">
-          <video alt="walkthough video"></video>
-        </div>
-
-        <div className="overviewPicture">
-          <img alt="img about something"></img>
-        </div>
-        </div>
-
-      </div>
-    </div>
-
-
-
     </div>
   );
 }
-
 
 /* 
 Framer motion 
