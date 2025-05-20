@@ -38,7 +38,11 @@ function App() {
 
   return (
     <div className="app">
-      <div className="navbar">
+      <motion.div className="navbar"
+        initial={{y:-300}}
+        animate={{y:0}}
+         transition={{delay: 2, duration: 0.75}}
+      >
         <div className="navLeft">
           <div className="logo">RoboYap</div>
         </div>
@@ -67,27 +71,33 @@ function App() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       <div className="banner">
         <div className="introMegaTextCointainer">
           <div className="introMegaText">
             <motion.div className="MT1"
-            initial={{opacity:0.5, y:500, scale: 1.5}}
-            animate={{opacity:1, y:0, scale: 1}}
-            transition={{delay: 2.5, duration: 0.75}}
+            initial={{y:325, scale: 1.75}}
+            animate={{y:0, scale: 1}}
+            transition={{delay: 2, duration: 0.75}}
             >
               <p>Making your own</p>
             </motion.div>
             <motion.div className="MT2"
-
+            initial={{y:400, scale: 1.75}}
+            animate={{y:0, scale: 1}}
+            transition={{delay: 2.1, duration: 0.75}}
             >
               <p>AI chatbot</p>
             </motion.div>
           </div>
         </div>
 
-        <div className="whereRU">
+        <motion.div className="whereRU"
+          initial={{x:-300}}
+          animate={{x:0}}
+          transition={{delay: 2, duration: 0.75}}
+        >
           <div>
             <p>Introduction</p>
           </div>
@@ -100,22 +110,30 @@ function App() {
           <div>
             <p>Next Steps</p>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="introFunFact">
+        <motion.div className="introFunFact"
+          initial={{x:1000}}
+          animate={{x:0}}
+          transition={{delay: 2, duration: 0.75}}
+        >
           <div className="introFunFactImg">
             <img alt="img here"></img>
           </div>
           <div className="introFunFactText">
             <p>text discrip</p>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="chatBotExample">
+        <motion.div className="chatBotExample"
+          initial={{y:300}}
+          animate={{y:0}}
+          transition={{delay: 2, duration: 0.75}}
+        >
           <div className="chatBotBox">
             <p></p>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       <div className="overview">
