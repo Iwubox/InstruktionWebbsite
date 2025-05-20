@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState } from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 //imges
 import hamburgerPNG from "./resorces/hambugerMenu.png";
@@ -44,7 +44,7 @@ function App() {
         </div>
         <div className="navRight">
           <div className="navItem">
-            <p>Home</p>
+            <p>Guide</p>
           </div>
           <div className="navItem">
             <p>About</p>
@@ -72,12 +72,18 @@ function App() {
       <div className="banner">
         <div className="introMegaTextCointainer">
           <div className="introMegaText">
-            <div className="MT1">
+            <motion.div className="MT1"
+            initial={{opacity:0.5, y:500, scale: 1.5}}
+            animate={{opacity:1, y:0, scale: 1}}
+            transition={{delay: 2.5, duration: 0.75}}
+            >
               <p>Making your own</p>
-            </div>
-            <div className="MT2">
+            </motion.div>
+            <motion.div className="MT2"
+
+            >
               <p>AI chatbot</p>
-            </div>
+            </motion.div>
           </div>
         </div>
 
