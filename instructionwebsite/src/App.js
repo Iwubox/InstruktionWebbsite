@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion} from "framer-motion";
 
 //imges
 import hamburgerPNG from "./resorces/hambugerMenu.png";
@@ -10,6 +10,8 @@ import hamburgerPNG from "./resorces/hambugerMenu.png";
 
 
 */
+
+
 function App() {
   let flipflop = true;
   let hamburgerMenu = () => {
@@ -35,6 +37,17 @@ function App() {
       alert("Error: flipflop ");
     }
   };
+
+  let scrollAnimationDown = () =>{
+    console.log("jdwauhdwhuaduhwahudhauwduhadhuaw")
+  window.scrollTo({top: 3000, behavior: "smooth"})
+  }
+
+  let scrollAnimationUp = () =>{
+        console.log("jdwauhdwhuaduhwahudhauwduhadhuaw")
+
+  window.scrollTo({top: 3000, behavior: "smooth"})
+  }
 
   return (
     <div className="app">
@@ -135,6 +148,20 @@ function App() {
           </div>
         </motion.div>
       </div>
+
+      <motion.div 
+      className="bob"
+      whileInView={scrollAnimationDown()}
+      viewport={{once:false}}
+      >
+      </motion.div>
+
+      <motion.div className="bobby"
+       whileInView={scrollAnimationUp()}
+        viewport={{once:false}}
+        >
+       </motion.div>
+
 
       <div className="overview">
         <div className="overviewContent">
