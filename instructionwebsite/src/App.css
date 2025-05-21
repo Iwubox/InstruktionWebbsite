@@ -224,7 +224,7 @@ html {
 /* overview ------------------------------------------------ */
 
 .overview{
-  background-color: black;
+  background-color: rgb(127, 127, 127);
   width: 100%;
   height: 100rem;
 }
@@ -233,5 +233,32 @@ html {
   display: flex;
   flex-direction: row;
   background-color: blue;
+  justify-content: space-between;
 }
 
+.overviewTextBox{
+  background-color: rgb(255, 255, 132);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 40rem;
+  height: 40rem;
+}
+
+.overviewRight{
+  display: flex;
+  flex-direction: column;
+}
+
+.overviewPicture{
+  background-color: rebeccapurple;
+  width: 30rem;
+  height: 30rem;
+}
+
+.walk{
+  background-color: darkgoldenrod;
+  width: 30rem;
+  height: 30rem;
+}

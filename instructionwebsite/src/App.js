@@ -166,7 +166,9 @@ function App() {
       <div className="overview">
         <div className="overviewContent">
           <div className="overviewTextBox">
-            <p>text here</p>
+            <p>Mamma mia visidwuadhwauhdwauhdwahudwauhdawhuduhwaduhwadhuwaduhwahudawhudahudwahudwauhdwahuduhwadhuwahduawhudwauhdwuhadhuwahudwahudwahudawuhdwahudwuhadhu</p>
+            <p>jdwajidwajuidwajidwjaidijwajidwjidw</p>
+            <p>hwdauhdwauhdwhaudhuwauhdwuhdwahudwhua</p>
           </div>
 
           <div className="overviewRight">
