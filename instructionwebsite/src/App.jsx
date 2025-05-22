@@ -140,8 +140,14 @@ function App() {
               </motion.div>
               <motion.div
                 className="guideMenuBox"
-                initial={{ x: 0 }}
-                whileHover={{ x: -40 }}
+                initial={{
+                  x: 0,
+                  clipPath: "polygon(0 0, 0 100%, 80% 100%, 100% 10%, 100% 0)",
+                }}
+                whileHover={{
+                  x: -40,
+                  clipPath: "polygon(0 0, 0 100%, 80% 100%, 100% 10%, 100% 0)",
+                }}
               >
                 {" "}
                 <a href="">6: Personalize your chatbot</a>
