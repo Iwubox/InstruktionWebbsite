@@ -37,6 +37,10 @@ function App() {
     }
   };
 
+  let scrollY = window.scrollY;
+  if (window.scrollY > 0) {
+  }
+
   let scrollLength = 0;
 
   let symbol1 = true;
