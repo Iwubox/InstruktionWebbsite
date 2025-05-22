@@ -38,6 +38,37 @@ function App() {
     }
   };
 
+  let scrollLength = 0;
+
+  let whereRUsymbols = () =>{
+     let symbol1 = document.getElementsByClassName("whereRUsymbol1")[0];
+     let symbol2 = document.getElementsByClassName("whereRUsymbol2")[0];
+     let symbol3 = document.getElementsByClassName("whereRUsymbol3")[0];
+     let symbol4 = document.getElementsByClassName("whereRUsymbol4")[0];
+
+     console.log(symbol1)
+
+
+    if(scrollLength < 300){
+      symbol1.style.clipPath = "polygon(50% 0%, 100% 50%, 50% 100%)";
+    }
+    else if(scrollLength > 300 && scrollLength < 600){
+
+    }
+    else if(scrollLength > 600 && scrollLength < 900){
+
+    }
+    else if(scrollLength > 900){
+
+    }
+    else{
+      console.log("whereRUsymbols eror")
+    }
+  }
+
+  whereRUsymbols()
+
+
   let scrollAnimationDown = () =>{
     console.log("jdwauhdwhuaduhwahudhauwduhadhuaw")
   window.scrollTo({top: 3000, behavior: "smooth"})
