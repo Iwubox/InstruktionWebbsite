@@ -25,7 +25,7 @@ function App() {
       hamburgerList.style.rotate = "0deg";
 
       flipflop = false;
-    } else if (flipflop == false) {
+    } else if (flipflop === false) {
       hamburger.style.rotate = "0deg";
       hamburger.style.transition = "0.5s";
 
@@ -39,11 +39,10 @@ function App() {
 
   let scrollLength = 0;
 
-  let whereRUsymbols = () => {
-    let symbol1 = useRef(null);
+  /* let symbol1 = useRef(null);
     let symbol2 = useRef(null);
     let symbol3 = useRef(null);
-    let symbol4 = useRef(null);
+    let symbol4 = useRef(null); 
 
     useEffect(() => {
       console.log(symbol1);
@@ -60,9 +59,7 @@ function App() {
         console.log("whereRUsymbols eror");
       }
     }, []);
-  };
-
-  whereRUsymbols();
+    */
 
   let scrollAnimationDown = () => {
     console.log("jdwauhdwhuaduhwahudhauwduhadhuaw");
@@ -142,19 +139,24 @@ function App() {
           transition={{ delay: 2, duration: 0.75 }}
         >
           <div className="whereRUBox">
-            <div className="whereRUsymbol1"></div>
+            <motion.div
+              className="whereRUsymbol1"
+              initial={{ opacity: 0.7, x: 0 }}
+              animate={symbol1 && { opacity: 1, x: 20 }}
+              transition={{ duration: 1, delay: 0.5 }}
+            ></motion.div>
             <p>Introduction</p>
           </div>
           <div className="whereRUBox">
-            <div className="whereRUsymbol2"></div>
+            <motion.div className="whereRUsymbol2"></motion.div>
             <p>Overview</p>
           </div>
           <div className="whereRUBox">
-            <div className="whereRUsymbol3"></div>
+            <motion.div className="whereRUsymbol3"></motion.div>
             <p>Getting Started</p>
           </div>
           <div className="whereRUBox">
-            <div className="whereRUsymbol4"></div>
+            <motion.div className="whereRUsymbol4"></motion.div>
             <p>Next Steps</p>
           </div>
         </motion.div>
