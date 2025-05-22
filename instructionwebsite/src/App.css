@@ -1,6 +1,7 @@
 html {
   overflow-x: hidden;
   font-size: 16px;
+  font-family: "Orbitron", "Russo One", Arial, Helvetica, sans-serif;
 }
 
 .app {
@@ -34,6 +35,8 @@ html {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+  font-family: "Rock Salt";
+  font-size: 1.5rem;
 }
 
 .navRight {
@@ -185,7 +188,8 @@ html {
 .introFunFactImg{
   width: 90%;
   height: 60%;
-  background-color: beige;
+  background-color: rgb(255, 255, 54);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
 .introFunFactText{
