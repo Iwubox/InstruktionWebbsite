@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 //imges
 import hamburgerPNG from "./resorces/hambugerMenu.png";
+import footerPNG from "./resorces/FromCyberpunksWebsite.png";
 
 /*TODO 
 Ändra get elementByClassName
@@ -61,17 +62,6 @@ function App() {
       }
     }, []);
     */
-
-  let scrollAnimationDown = () => {
-    console.log("jdwauhdwhuaduhwahudhauwduhadhuaw");
-    window.scrollTo({ top: 3000, behavior: "smooth" });
-  };
-
-  let scrollAnimationUp = () => {
-    console.log("jdwauhdwhuaduhwahudhauwduhadhuaw");
-
-    window.scrollTo({ top: 3000, behavior: "smooth" });
-  };
 
   return (
     <div className="app">
@@ -194,17 +184,7 @@ function App() {
         </motion.div>
       </div>
 
-      <motion.div
-        className="bob"
-        whileInView={scrollAnimationDown()}
-        viewport={{ once: false }}
-      ></motion.div>
-
-      <motion.div
-        className="bobby"
-        whileInView={scrollAnimationUp()}
-        viewport={{ once: false }}
-      ></motion.div>
+      <div className="blackSpace"></div>
 
       <div className="overview">
         <div className="overviewContent">
@@ -249,7 +229,22 @@ function App() {
         </div>
       </div>
 
-      <div className="footer"></div>
+      <div className="blackSpace2"></div>
+
+      <div className="footer">
+        <img src={footerPNG} alt=""></img>
+        <div className="footerContent">
+          <div>
+            <p>All rights reserved | © RoboYap</p>
+          </div>
+          <div className="contact">
+            <p>contact us:</p>
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a>Mail: RoboYap@gmail.com</a>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
