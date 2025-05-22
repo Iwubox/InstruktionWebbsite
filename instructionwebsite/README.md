@@ -23,11 +23,8 @@ Förtsätt med design av websidan och tog reda på hur man skapar en egen chatbo
 Ai chatbot med Rasa AI Enginen för att den är gratis, open source och har få restriktioner.
 För botten bygger jag den med node.js på webben.
 
-
-
-
 // refrences
 https://www.cyberpunk.net/us/en/
 https://www.tiktok.com/@marcelodesignx/video/7503294520306502918?_r=1&_t=ZN-8wRhHPZZUKE
 https://www.tiktok.com/@marcelodesignx/video/7494729416547831095?_r=1&_t=ZN-8wRhNiMfXFO
-
+https://beebom.com/how-build-own-ai-chatbot-with-chatgpt-api/

@@ -37,10 +37,6 @@ function App() {
     }
   };
 
-  let scrollY = window.scrollY;
-  if (window.scrollY > 0) {
-  }
-
   let scrollLength = 0;
 
   let symbol1 = true;
@@ -212,17 +208,21 @@ function App() {
 
       <div className="overview">
         <div className="overviewContent">
-          <div className="overviewTextBox">
+          <motion.div className="overviewTextBox">
             <p>
-              Mamma mia
-              visidwuadhwauhdwauhdwahudwauhdawhuduhwaduhwadhuwaduhwahudawhudahudwahudwauhdwahuduhwadhuwahduawhudwauhdwuhadhuwahudwahudwahudawuhdwahudwuhadhu
+              There are many ways of creating your own AI chatbot. When creating
+              your own AI chatbot you will first need to pick a stack and in
+              this tutorial we will be using OpenAi's stack. These come with
+              different restrictions and limitations but by using OpenAIs api
+              you will not need a strong CPU or GPU. This tutorial will be using
+              the coding language python and you will need no prior knowlage for
+              this tutorial.
             </p>
-            <p>jdwajidwajuidwajidwjaidijwajidwjidw</p>
-            <p>hwdauhdwauhdwhaudhuwauhdwuhdwahudwhua</p>
-          </div>
+          </motion.div>
 
           <div className="overviewRight">
             <div className="walk">
+              <p>Complete walkthough</p>
               <video alt="walkthough video"></video>
             </div>
 
@@ -232,6 +232,24 @@ function App() {
           </div>
         </div>
       </div>
+
+      <div className="blackSpace"></div>
+
+      <div className="overview">
+        <div className="overviewContent">
+          <div>
+            <div>
+              <img alt="img here"></img>
+            </div>
+            <p>about img</p>
+          </div>
+          <div>
+            <p>text wind up here</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="footer"></div>
     </div>
   );
 }
@@ -244,10 +262,13 @@ Paralax = scroll functioner
 
 Overview explaination: 
 
-  Huggin face för att hitta stack
-
-
 
  Walkthrough
+
+ step 2: install pip and python
+ step 3: download ide
+ step 4: Get Open Ai key
+ step 5: code 
+ step 6: personalize your bot
 */
 export default App;
