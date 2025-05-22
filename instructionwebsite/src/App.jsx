@@ -66,7 +66,7 @@ function App() {
   const [visable, setVisable] = useState(false);
 
   let guideMenu = () => {
-    visable ? setVisable(true) : setVisable(false);
+    setVisable((prev) => !prev);
   };
 
   return (
@@ -95,8 +95,59 @@ function App() {
             className="guideMenu"
             initial={{ opacity: 0 }}
             animate={{ opacity: visable ? 1 : 0 }}
-            transition={{ duration: 0.5 }}
-          ></motion.div>
+            transition={{ duration: 0.2 }}
+          >
+            <div className="guideMenuContent">
+              <motion.div
+                className="guideMenuBox"
+                initial={{ x: 0 }}
+                whileHover={{ x: -40 }}
+              >
+                {" "}
+                <a href="#overview">1: Overview</a>
+              </motion.div>
+              <motion.div
+                className="guideMenuBox"
+                initial={{ x: 0 }}
+                whileHover={{ x: -40 }}
+              >
+                {" "}
+                <a href="">2: Installing python and pip</a>
+              </motion.div>
+              <motion.div
+                className="guideMenuBox"
+                initial={{ x: 0 }}
+                whileHover={{ x: -40 }}
+              >
+                {" "}
+                <a href="">3: Download VS code</a>
+              </motion.div>
+              <motion.div
+                className="guideMenuBox"
+                initial={{ x: 0 }}
+                whileHover={{ x: -40 }}
+              >
+                {" "}
+                <a href="">4: Get API key</a>
+              </motion.div>
+              <motion.div
+                className="guideMenuBox"
+                initial={{ x: 0 }}
+                whileHover={{ x: -40 }}
+              >
+                {" "}
+                <a href="">5: Coding</a>
+              </motion.div>
+              <motion.div
+                className="guideMenuBox"
+                initial={{ x: 0 }}
+                whileHover={{ x: -40 }}
+              >
+                {" "}
+                <a href="">6: Personalize your chatbot</a>
+              </motion.div>
+            </div>
+          </motion.div>
 
           <motion.div className="hamburgerMenu" onClick={hamburgerMenu}>
             <img src={hamburgerPNG} alt="hamburger menu"></img>
@@ -200,7 +251,7 @@ function App() {
 
       <div className="blackSpace"></div>
 
-      <div className="overview">
+      <div className="overview" id="overview">
         <div className="overviewContent">
           <motion.div className="overviewTextBox">
             <p>
