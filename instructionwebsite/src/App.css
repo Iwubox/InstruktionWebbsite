@@ -186,7 +186,6 @@ html {
   height: 1rem;
   border-radius: 1rem;
   background-color: gray;
-  clip-path: polygon(50% 0%, 100% 50%, 50% 100%);
 }
 
 .introFunFact {

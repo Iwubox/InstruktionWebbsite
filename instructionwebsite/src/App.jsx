@@ -39,6 +39,7 @@ function App() {
 
   let scrollLength = 0;
 
+  let symbol1 = true;
   /* let symbol1 = useRef(null);
     let symbol2 = useRef(null);
     let symbol3 = useRef(null);
@@ -141,9 +142,15 @@ function App() {
           <div className="whereRUBox">
             <motion.div
               className="whereRUsymbol1"
-              initial={{ opacity: 0.7, x: 0 }}
-              animate={symbol1 && { opacity: 1, x: 20 }}
-              transition={{ duration: 1, delay: 0.5 }}
+              initial={{ opacity: 0.7, x: 0, clipPath: "circle(50%)" }}
+              animate={
+                symbol1 && {
+                  opacity: 1,
+                  x: 5,
+                  clipPath: "polygon(50% 0%, 100% 50%, 50% 100%",
+                }
+              }
+              transition={{ duration: 0.25, delay: 5 }}
             ></motion.div>
             <p>Introduction</p>
           </div>
