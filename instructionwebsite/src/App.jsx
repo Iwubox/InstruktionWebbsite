@@ -63,6 +63,16 @@ function App() {
     }, []);
     */
 
+  const [Visable, setVisable] = useState(false);
+
+  let guideMenu = () => {
+    if (Visable) {
+      setVisable(false);
+    } else {
+      setVisable(true);
+    }
+  };
+
   return (
     <div className="app">
       <motion.div
@@ -75,7 +85,7 @@ function App() {
           <div className="logo">RoboYap</div>
         </div>
         <div className="navRight">
-          <div className="navItem">
+          <div className="navItem" onClick={guideMenu}>
             <p>Guide</p>
           </div>
           <div className="navItem">
@@ -84,6 +94,13 @@ function App() {
           <div className="navItem">
             <p>Contact</p>
           </div>
+
+          <motion.div
+            className="guideMenu"
+            initial={{ opacity: 0 }}
+            animate={Visable && { opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          ></motion.div>
 
           <motion.div className="hamburgerMenu" onClick={hamburgerMenu}>
             <img src={hamburgerPNG} alt="hamburger menu"></img>
