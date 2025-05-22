@@ -84,9 +84,10 @@ function App() {
           <div className="navItem">
             <p>Contact</p>
           </div>
-          <div className="hamburgerMenu" onClick={hamburgerMenu}>
+
+          <motion.div className="hamburgerMenu" onClick={hamburgerMenu}>
             <img src={hamburgerPNG} alt="hamburger menu"></img>
-          </div>
+          </motion.div>
           <div className="hamburgerList">
             <div className="hambItem">
               <p>Home</p>
