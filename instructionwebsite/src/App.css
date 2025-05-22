@@ -171,11 +171,26 @@ html {
   top: 20%;
 }
 
+.whereRUBox{
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  gap: 1rem;
+  font-family: "Orbitron", "Russo One", Arial, Helvetica, sans-serif;
+}
+
+.whereRUsymbol1, .whereRUsymbol2, .whereRUsymbol3, .whereRUsymbol4{
+  width: 1rem;
+  height: 1rem;
+  border-radius: 1rem;
+  background-color: gray;
+}
+
 .introFunFact{
   position: absolute;
   width: 17.5%;
   height: 40%;
-  background-color: red;
   right: 1.5%;
   top: 20%;
   display: flex;
@@ -186,10 +201,10 @@ html {
 }
 
 .introFunFactImg{
-  width: 90%;
-  height: 60%;
+  width: 75%;
+  height: 70%;
   background-color: rgb(255, 255, 54);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 25%, 25% 0, 100% 0, 100% 75%, 75% 100%, 0 100%);
 }
 
 .introFunFactText{

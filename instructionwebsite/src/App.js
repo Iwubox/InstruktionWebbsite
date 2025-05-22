@@ -111,16 +111,20 @@ function App() {
           animate={{x:0}}
           transition={{delay: 2, duration: 0.75}}
         >
-          <div>
+          <div className="whereRUBox">
+            <div className="whereRUsymbol1"></div>
             <p>Introduction</p>
           </div>
-          <div>
+          <div className="whereRUBox">
+            <div className="whereRUsymbol2"></div>
             <p>Overview</p>
           </div>
-          <div>
+          <div className="whereRUBox">
+            <div className="whereRUsymbol3"></div>
             <p>Getting Started</p>
           </div>
-          <div>
+          <div className="whereRUBox">
+            <div className="whereRUsymbol4"></div>
             <p>Next Steps</p>
           </div>
         </motion.div>
