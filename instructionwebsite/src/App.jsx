@@ -1,6 +1,6 @@
 import "./App.css";
-import { useState } from "react";
-import { motion} from "framer-motion";
+import { useState, useRef, useEffect } from "react";
+import { motion } from "framer-motion";
 
 //imges
 import hamburgerPNG from "./resorces/hambugerMenu.png";
@@ -10,7 +10,6 @@ import hamburgerPNG from "./resorces/hambugerMenu.png";
 
 
 */
-
 
 function App() {
   let flipflop = true;
@@ -40,52 +39,49 @@ function App() {
 
   let scrollLength = 0;
 
-  let whereRUsymbols = () =>{
-     let symbol1 = document.getElementsByClassName("whereRUsymbol1")[0];
-     let symbol2 = document.getElementsByClassName("whereRUsymbol2")[0];
-     let symbol3 = document.getElementsByClassName("whereRUsymbol3")[0];
-     let symbol4 = document.getElementsByClassName("whereRUsymbol4")[0];
+  let whereRUsymbols = () => {
+    let symbol1 = useRef(null);
+    let symbol2 = useRef(null);
+    let symbol3 = useRef(null);
+    let symbol4 = useRef(null);
 
-     console.log(symbol1)
+    useEffect(() => {
+      console.log(symbol1);
 
+      if (scrollLength < 300) {
+        symbol1.current.style.clipPath = "polygon(50% 0%, 100% 50%, 50% 100%)";
+      } else if (scrollLength > 300 && scrollLength < 600) {
+        symbol2.current.style.clipPath = "polygon(50% 0%, 100% 50%, 50% 100%)";
+      } else if (scrollLength > 600 && scrollLength < 900) {
+        symbol3.current.style.clipPath = "polygon(50% 0%, 100% 50%, 50% 100%)";
+      } else if (scrollLength > 900) {
+        symbol4.current.style.clipPath = "polygon(50% 0%, 100% 50%, 50% 100%)";
+      } else {
+        console.log("whereRUsymbols eror");
+      }
+    }, []);
+  };
 
-    if(scrollLength < 300){
-      symbol1.style.clipPath = "polygon(50% 0%, 100% 50%, 50% 100%)";
-    }
-    else if(scrollLength > 300 && scrollLength < 600){
+  whereRUsymbols();
 
-    }
-    else if(scrollLength > 600 && scrollLength < 900){
+  let scrollAnimationDown = () => {
+    console.log("jdwauhdwhuaduhwahudhauwduhadhuaw");
+    window.scrollTo({ top: 3000, behavior: "smooth" });
+  };
 
-    }
-    else if(scrollLength > 900){
+  let scrollAnimationUp = () => {
+    console.log("jdwauhdwhuaduhwahudhauwduhadhuaw");
 
-    }
-    else{
-      console.log("whereRUsymbols eror")
-    }
-  }
-
-  whereRUsymbols()
-
-
-  let scrollAnimationDown = () =>{
-    console.log("jdwauhdwhuaduhwahudhauwduhadhuaw")
-  window.scrollTo({top: 3000, behavior: "smooth"})
-  }
-
-  let scrollAnimationUp = () =>{
-        console.log("jdwauhdwhuaduhwahudhauwduhadhuaw")
-
-  window.scrollTo({top: 3000, behavior: "smooth"})
-  }
+    window.scrollTo({ top: 3000, behavior: "smooth" });
+  };
 
   return (
     <div className="app">
-      <motion.div className="navbar"
-        initial={{y:-300}}
-        animate={{y:0}}
-         transition={{delay: 2, duration: 0.75}}
+      <motion.div
+        className="navbar"
+        initial={{ y: -300 }}
+        animate={{ y: 0 }}
+        transition={{ delay: 2, duration: 0.75 }}
       >
         <div className="navLeft">
           <div className="logo">RoboYap</div>
@@ -120,27 +116,30 @@ function App() {
       <div className="banner">
         <div className="introMegaTextCointainer">
           <div className="introMegaText">
-            <motion.div className="MT1"
-            initial={{y:325, scale: 1.75}}
-            animate={{y:0, scale: 1}}
-            transition={{delay: 2, duration: 0.75}}
+            <motion.div
+              className="MT1"
+              initial={{ y: 325, scale: 1.75 }}
+              animate={{ y: 0, scale: 1 }}
+              transition={{ delay: 2, duration: 0.75 }}
             >
               <p>Making your own</p>
             </motion.div>
-            <motion.div className="MT2"
-            initial={{y:400, scale: 1.75}}
-            animate={{y:0, scale: 1}}
-            transition={{delay: 2.1, duration: 0.75}}
+            <motion.div
+              className="MT2"
+              initial={{ y: 400, scale: 1.75 }}
+              animate={{ y: 0, scale: 1 }}
+              transition={{ delay: 2.1, duration: 0.75 }}
             >
               <p>AI chatbot</p>
             </motion.div>
           </div>
         </div>
 
-        <motion.div className="whereRU"
-          initial={{x:-300}}
-          animate={{x:0}}
-          transition={{delay: 2, duration: 0.75}}
+        <motion.div
+          className="whereRU"
+          initial={{ x: -300 }}
+          animate={{ x: 0 }}
+          transition={{ delay: 2, duration: 0.75 }}
         >
           <div className="whereRUBox">
             <div className="whereRUsymbol1"></div>
@@ -160,10 +159,11 @@ function App() {
           </div>
         </motion.div>
 
-        <motion.div className="introFunFact"
-          initial={{x:1000}}
-          animate={{x:0}}
-          transition={{delay: 2, duration: 0.75}}
+        <motion.div
+          className="introFunFact"
+          initial={{ x: 1000 }}
+          animate={{ x: 0 }}
+          transition={{ delay: 2, duration: 0.75 }}
         >
           <div className="introFunFactImg">
             <img alt="img here"></img>
@@ -173,10 +173,11 @@ function App() {
           </div>
         </motion.div>
 
-        <motion.div className="chatBotExample"
-          initial={{y:300}}
-          animate={{y:0}}
-          transition={{delay: 2, duration: 0.75}}
+        <motion.div
+          className="chatBotExample"
+          initial={{ y: 300 }}
+          animate={{ y: 0 }}
+          transition={{ delay: 2, duration: 0.75 }}
         >
           <div className="chatBotBox">
             <p></p>
@@ -184,24 +185,25 @@ function App() {
         </motion.div>
       </div>
 
-      <motion.div 
-      className="bob"
-      whileInView={scrollAnimationDown()}
-      viewport={{once:false}}
-      >
-      </motion.div>
+      <motion.div
+        className="bob"
+        whileInView={scrollAnimationDown()}
+        viewport={{ once: false }}
+      ></motion.div>
 
-      <motion.div className="bobby"
-       whileInView={scrollAnimationUp()}
-        viewport={{once:false}}
-        >
-       </motion.div>
-
+      <motion.div
+        className="bobby"
+        whileInView={scrollAnimationUp()}
+        viewport={{ once: false }}
+      ></motion.div>
 
       <div className="overview">
         <div className="overviewContent">
           <div className="overviewTextBox">
-            <p>Mamma mia visidwuadhwauhdwauhdwahudwauhdawhuduhwaduhwadhuwaduhwahudawhudahudwahudwauhdwahuduhwadhuwahduawhudwauhdwuhadhuwahudwahudwahudawuhdwahudwuhadhu</p>
+            <p>
+              Mamma mia
+              visidwuadhwauhdwauhdwahudwauhdawhuduhwaduhwadhuwaduhwahudawhudahudwahudwauhdwahuduhwadhuwahduawhudwauhdwuhadhuwahudwahudwahudawuhdwahudwuhadhu
+            </p>
             <p>jdwajidwajuidwajidwjaidijwajidwjidw</p>
             <p>hwdauhdwauhdwhaudhuwauhdwuhdwahudwhua</p>
           </div>

@@ -28,7 +28,7 @@ html {
   width: 15rem;
 }
 
-.logo{
+.logo {
   transform: skew(20deg);
   background-image: linear-gradient(to bottom right, #ffffff 0%, #ffc3be 100%);
   -webkit-background-clip: text;
@@ -96,11 +96,9 @@ html {
   justify-content: top;
   align-items: center;
   flex-direction: column;
-
 }
 
-.hambItem{
-
+.hambItem {
 }
 
 @media screen and (max-width: 600px) {
@@ -122,7 +120,7 @@ html {
 
 /*banner --------------------- */
 
-.banner{
+.banner {
   margin-top: 3.5rem;
   background-color: red;
   width: 100%;
@@ -131,7 +129,7 @@ html {
   flex-direction: column;
 }
 
-.introMegaTextCointainer{
+.introMegaTextCointainer {
   width: 100%;
   height: 35%;
   background-color: blue;
@@ -140,7 +138,7 @@ html {
   align-items: center;
 }
 
-.introMegaText{
+.introMegaText {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -148,21 +146,21 @@ html {
   font-size: 6rem;
 }
 
-.MT1{
+.MT1 {
   height: 8rem;
   background-color: red;
   display: flex;
   align-items: center;
 }
 
-.MT2{
+.MT2 {
   height: 8rem;
   background-color: yellow;
-    display: flex;
+  display: flex;
   align-items: center;
 }
 
-.whereRU{
+.whereRU {
   background-color: aqua;
   display: flex;
   flex-direction: column;
@@ -171,7 +169,7 @@ html {
   top: 20%;
 }
 
-.whereRUBox{
+.whereRUBox {
   display: flex;
   flex-direction: row;
   justify-content: left;
@@ -180,14 +178,17 @@ html {
   font-family: "Orbitron", "Russo One", Arial, Helvetica, sans-serif;
 }
 
-.whereRUsymbol1, .whereRUsymbol2, .whereRUsymbol3, .whereRUsymbol4{
+.whereRUsymbol1,
+.whereRUsymbol2,
+.whereRUsymbol3,
+.whereRUsymbol4 {
   width: 1rem;
   height: 1rem;
   border-radius: 1rem;
   background-color: gray;
 }
 
-.introFunFact{
+.introFunFact {
   position: absolute;
   width: 17.5%;
   height: 40%;
@@ -200,21 +201,20 @@ html {
   gap: 1rem;
 }
 
-.introFunFactImg{
+.introFunFactImg {
   width: 75%;
   height: 70%;
   background-color: rgb(255, 255, 54);
   clip-path: polygon(0 25%, 25% 0, 100% 0, 100% 75%, 75% 100%, 0 100%);
 }
 
-.introFunFactText{
+.introFunFactText {
   width: 90%;
   height: 30%;
   background-color: green;
-
 }
 
-.chatBotExample{
+.chatBotExample {
   width: 100%;
   height: 60%;
   background-color: aquamarine;
@@ -223,39 +223,39 @@ html {
   justify-content: center;
 }
 
-.chatBotBox{
+.chatBotBox {
   background-color: #ee786e;
   width: 50%;
   height: 80%;
 }
 
-.bob{
+.bob {
   background-color: yellow;
   width: 100%;
   height: 2rem;
 }
 
-.bobby{
+.bobby {
   background-color: yellowgreen;
-    width: 100%;
+  width: 100%;
   height: 2rem;
 }
 /* overview ------------------------------------------------ */
 
-.overview{
+.overview {
   background-color: rgb(127, 127, 127);
   width: 100%;
   height: 100rem;
 }
 
-.overviewContent{
+.overviewContent {
   display: flex;
   flex-direction: row;
   background-color: blue;
   justify-content: space-between;
 }
 
-.overviewTextBox{
+.overviewTextBox {
   background-color: rgb(255, 255, 132);
   display: flex;
   justify-content: center;
@@ -265,18 +265,18 @@ html {
   height: 40rem;
 }
 
-.overviewRight{
+.overviewRight {
   display: flex;
   flex-direction: column;
 }
 
-.overviewPicture{
+.overviewPicture {
   background-color: rebeccapurple;
   width: 30rem;
   height: 30rem;
 }
 
-.walk{
+.walk {
   background-color: darkgoldenrod;
   width: 30rem;
   height: 30rem;
