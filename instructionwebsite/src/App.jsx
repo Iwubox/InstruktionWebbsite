@@ -63,14 +63,10 @@ function App() {
     }, []);
     */
 
-  const [Visable, setVisable] = useState(false);
+  const [visable, setVisable] = useState(false);
 
   let guideMenu = () => {
-    if (Visable) {
-      setVisable(false);
-    } else {
-      setVisable(true);
-    }
+    visable ? setVisable(true) : setVisable(false);
   };
 
   return (
@@ -98,7 +94,7 @@ function App() {
           <motion.div
             className="guideMenu"
             initial={{ opacity: 0 }}
-            animate={Visable && { opacity: 1 }}
+            animate={{ opacity: visable ? 1 : 0 }}
             transition={{ duration: 0.5 }}
           ></motion.div>
 
