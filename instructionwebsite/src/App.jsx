@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState, useRef, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 
 //imges
 import hamburgerPNG from "./resorces/hambugerMenu.png";
@@ -13,6 +13,19 @@ import footerPNG from "./resorces/FromCyberpunksWebsite.png";
 */
 
 function App() {
+  //scroll logic -----
+  const { scrollYProgress } = useScroll();
+
+  const [navBG, setNavBG] = useState(false);
+
+  if (scrollYProgress > 0) {
+    navBGChange();
+  }
+
+  let navBGChange = () => {
+    setNavBG((prev) => !prev);
+  };
+
   let flipflop = true;
   let hamburgerMenu = () => {
     let hamburger = document.getElementsByClassName("hamburgerMenu")[0];
@@ -37,8 +50,6 @@ function App() {
       alert("Error: flipflop ");
     }
   };
-
-  let scrollLength = 0;
 
   let symbol1 = true;
   /* let symbol1 = useRef(null);
