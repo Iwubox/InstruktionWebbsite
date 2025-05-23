@@ -244,6 +244,17 @@ function App() {
         </motion.div>
 
         <motion.div
+          className="technoStyle"
+          style={{ backgroundColor: "red" }}
+          animate={{
+            backgroundColor: ["blue", "lightblue", "yellow"],
+          }}
+          transition={{ duration: 2, repeat: Infinity, repeatType: "loop" }}
+        ></motion.div>
+
+        <motion.div className="technoStyle"></motion.div>
+
+        <motion.div
           className="chatBotExample"
           initial={{ y: 300 }}
           animate={{ y: 0 }}
