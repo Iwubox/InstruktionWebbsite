@@ -245,14 +245,15 @@ function App() {
 
         <motion.div
           className="technoStyle"
-          style={{ backgroundColor: "red" }}
-          animate={{
-            backgroundColor: ["blue", "lightblue", "yellow"],
-          }}
+          animate={{}}
           transition={{ duration: 2, repeat: Infinity, repeatType: "loop" }}
         ></motion.div>
 
-        <motion.div className="technoStyle"></motion.div>
+        <motion.div
+          className="technoStyle2"
+          animate={{}}
+          transition={{ duration: 2, repeat: Infinity, repeatType: "loop" }}
+        ></motion.div>
 
         <motion.div
           className="chatBotExample"

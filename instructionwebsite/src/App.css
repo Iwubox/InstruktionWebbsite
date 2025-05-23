@@ -159,9 +159,8 @@ body {
 /*banner --------------------- */
 
 .banner {
-  background-color: red;
   width: 100%;
-  height: 100vh;
+  height: 140vh;
   display: flex;
   flex-direction: column;
 }
@@ -169,7 +168,6 @@ body {
 .introMegaTextCointainer {
   width: 100%;
   height: 35%;
-  background-color: blue;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -188,12 +186,22 @@ body {
   height: 8rem;
   display: flex;
   align-items: center;
+  background: linear-gradient(to bottom right, #fceeb5 0%, #ee786e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 .MT2 {
   height: 8rem;
   display: flex;
   align-items: center;
+  background: linear-gradient(to bottom right, #fceeb5 0%, #ee786e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 .whereRU {
@@ -242,26 +250,39 @@ body {
   height: 70%;
   background-color: rgb(255, 255, 54);
   clip-path: polygon(0 25%, 25% 0, 100% 0, 100% 75%, 75% 100%, 0 100%);
+  z-index: 12;
 }
 
 .introFunFactText {
   width: 90%;
   height: 30%;
-  background-color: green;
 }
 
 .technoStyle {
+  background-color: red;
   width: 27.5vw;
   height: 45vh;
   position: absolute;
   top: 0;
   right: 0;
   clip-path: polygon(10% 0, 12% 0, 25% 45%, 100% 96%, 100% 99%, 23% 47%);
+  z-index: 10;
+}
+
+.technoStyle2 {
+  background-color: blue;
+  width: 27.5vw;
+  height: 45vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  clip-path: polygon(20% 0, 22% 0, 35% 43%, 100% 86%, 100% 89%, 33% 45%);
+  z-index: 10;
 }
 
 .chatBotExample {
   width: 100%;
-  height: 60%;
+  height: 130vh;
   background-color: aquamarine;
   display: flex;
   align-items: last baseline;
@@ -274,17 +295,6 @@ body {
   height: 80%;
 }
 
-.bob {
-  background-color: yellow;
-  width: 100%;
-  height: 2rem;
-}
-
-.bobby {
-  background-color: yellowgreen;
-  width: 100%;
-  height: 2rem;
-}
 /* overview ------------------------------------------------ */
 
 .overview {
