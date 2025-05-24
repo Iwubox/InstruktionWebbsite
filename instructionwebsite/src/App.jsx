@@ -17,6 +17,7 @@ function App() {
   const { scrollYProgress } = useScroll();
 
   const [navBG, setNavBG] = useState(false);
+  const [whereRUstate, setWhereRUstate] = useState(1);
 
   useMotionValueEvent(scrollYProgress, "change", (newScrollProgress) => {
     if (newScrollProgress > 0.01) {
@@ -25,6 +26,18 @@ function App() {
     } else {
       setNavBG(false);
     }
+
+    setWhereRUstate(1);
+
+    if (newScrollProgress > 0.07) {
+      setWhereRUstate(2);
+    } else if (newScrollProgress > 0.5) {
+      setWhereRUstate(3);
+    } else if (newScrollProgress > 0.9) {
+      setWhereRUstate(4);
+    }
+
+    console.log(navBG);
   });
 
   let flipflop = true;
@@ -79,7 +92,6 @@ function App() {
 
   let guideMenu = () => {
     setVisable((prev) => !prev);
-    console.log(scrollYProgress.current);
   };
 
   return (
@@ -89,12 +101,14 @@ function App() {
         initial={{ y: -300 }}
         animate={{ y: 0 }}
         transition={{ delay: 2, duration: 0.75 }}
-        style={{
-          backgroundImage: navBG
-            ? "linear-gradient(to bottom, rgba(0,0,0,70%), rgba(0,0,0,30%), rgba(0,0,0,5%),rgba(0,0,0,0))"
-            : "none",
-        }}
       >
+        <motion.div
+          className="navBarBG"
+          initial={{ opacity: 0 }}
+          animate={navBG ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ delay: 0.2, duration: 0.75 }}
+        ></motion.div>
+
         <div className="navLeft">
           <div className="logo">RoboYap</div>
         </div>
