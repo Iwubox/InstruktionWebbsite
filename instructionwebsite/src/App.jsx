@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState, useRef, useEffect } from "react";
-import { motion, useScroll } from "framer-motion";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 
 //imges
 import hamburgerPNG from "./resorces/hambugerMenu.png";
@@ -16,11 +16,16 @@ function App() {
   //scroll logic -----
   const { scrollYProgress } = useScroll();
 
-  //const [navBG, setNavBG] = useState(false);
+  const [navBG, setNavBG] = useState(false);
 
-  if (scrollYProgress.current > 0) {
-    console.log("PLZ WORKK");
-  }
+  useMotionValueEvent(scrollYProgress, "change", (newScrollProgress) => {
+    if (newScrollProgress > 0.01) {
+      console.log(newScrollProgress);
+      setNavBG(true);
+    } else {
+      setNavBG(false);
+    }
+  });
 
   let flipflop = true;
   let hamburgerMenu = () => {
@@ -74,6 +79,7 @@ function App() {
 
   let guideMenu = () => {
     setVisable((prev) => !prev);
+    console.log(scrollYProgress.current);
   };
 
   return (
@@ -83,6 +89,11 @@ function App() {
         initial={{ y: -300 }}
         animate={{ y: 0 }}
         transition={{ delay: 2, duration: 0.75 }}
+        style={{
+          backgroundImage: navBG
+            ? "linear-gradient(to bottom, rgba(0,0,0,70%), rgba(0,0,0,30%), rgba(0,0,0,5%),rgba(0,0,0,0))"
+            : "none",
+        }}
       >
         <div className="navLeft">
           <div className="logo">RoboYap</div>
