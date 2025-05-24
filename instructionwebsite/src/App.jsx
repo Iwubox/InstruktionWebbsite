@@ -16,15 +16,11 @@ function App() {
   //scroll logic -----
   const { scrollYProgress } = useScroll();
 
-  const [navBG, setNavBG] = useState(false);
+  //const [navBG, setNavBG] = useState(false);
 
-  if (scrollYProgress > 0) {
-    navBGChange();
+  if (scrollYProgress.current > 0) {
+    console.log("PLZ WORKK");
   }
-
-  let navBGChange = () => {
-    setNavBG((prev) => !prev);
-  };
 
   let flipflop = true;
   let hamburgerMenu = () => {

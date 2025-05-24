@@ -178,12 +178,12 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  font-size: 6rem;
+  font-size: 9vh;
   font-family: "Russo One", "Orbitron", Arial, Helvetica, sans-serif;
 }
 
 .MT1 {
-  height: 8rem;
+  height: 8vh;
   display: flex;
   align-items: center;
   background: linear-gradient(to bottom right, #fceeb5 0%, #ee786e 100%);
@@ -194,7 +194,7 @@ body {
 }
 
 .MT2 {
-  height: 8rem;
+  height: 12vh;
   display: flex;
   align-items: center;
   background: linear-gradient(to bottom right, #fceeb5 0%, #ee786e 100%);
@@ -259,6 +259,7 @@ body {
 }
 
 .technoStyle {
+  aspect-ratio: 11 / 9;
   background-color: red;
   width: 27.5vw;
   height: 45vh;
