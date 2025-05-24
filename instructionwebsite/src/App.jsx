@@ -27,17 +27,17 @@ function App() {
       setNavBG(false);
     }
 
-    setWhereRUstate(1);
-
-    if (newScrollProgress > 0.07) {
+    if (newScrollProgress < 0.07) {
+      setWhereRUstate(1);
+    } else if (newScrollProgress < 0.5) {
       setWhereRUstate(2);
-    } else if (newScrollProgress > 0.5) {
+    } else if (newScrollProgress < 0.9) {
       setWhereRUstate(3);
-    } else if (newScrollProgress > 0.9) {
+    } else if (newScrollProgress <= 1) {
       setWhereRUstate(4);
     }
 
-    console.log(navBG);
+    console.log(whereRUstate);
   });
 
   let flipflop = true;
@@ -64,29 +64,6 @@ function App() {
       alert("Error: flipflop ");
     }
   };
-
-  let symbol1 = true;
-  /* let symbol1 = useRef(null);
-    let symbol2 = useRef(null);
-    let symbol3 = useRef(null);
-    let symbol4 = useRef(null); 
-
-    useEffect(() => {
-      console.log(symbol1);
-
-      if (scrollLength < 300) {
-        symbol1.current.style.clipPath = "polygon(50% 0%, 100% 50%, 50% 100%)";
-      } else if (scrollLength > 300 && scrollLength < 600) {
-        symbol2.current.style.clipPath = "polygon(50% 0%, 100% 50%, 50% 100%)";
-      } else if (scrollLength > 600 && scrollLength < 900) {
-        symbol3.current.style.clipPath = "polygon(50% 0%, 100% 50%, 50% 100%)";
-      } else if (scrollLength > 900) {
-        symbol4.current.style.clipPath = "polygon(50% 0%, 100% 50%, 50% 100%)";
-      } else {
-        console.log("whereRUsymbols eror");
-      }
-    }, []);
-    */
 
   const [visable, setVisable] = useState(false);
 
@@ -237,27 +214,92 @@ function App() {
               className="whereRUsymbol1"
               initial={{ opacity: 0.7, x: 0, clipPath: "circle(50%)" }}
               animate={
-                symbol1 && {
-                  opacity: 1,
-                  x: 5,
-                  clipPath: "polygon(50% 0%, 100% 50%, 50% 100%",
-                }
+                whereRUstate === 1
+                  ? {
+                      opacity: 1,
+                      x: 5,
+                      clipPath: "polygon(50% 0%, 100% 50%, 50% 100%",
+                    }
+                  : { opacity: 0.7, x: 0, clipPath: "circle(50%)" }
               }
-              transition={{ duration: 0.25, delay: 5 }}
+              transition={{ duration: 0.25, delay: 0.5 }}
             ></motion.div>
-            <p>Introduction</p>
+            <motion.div
+              initial={{ x: 0 }}
+              animate={whereRUstate === 1 ? { x: 20 } : { x: 0 }}
+              transition={{ duration: 0.25, delay: 0.5 }}
+            >
+              <p>Introduction</p>
+            </motion.div>{" "}
           </div>
           <div className="whereRUBox">
-            <motion.div className="whereRUsymbol2"></motion.div>
-            <p>Overview</p>
+            <motion.div
+              className="whereRUsymbol2"
+              initial={{ opacity: 0.7, x: 0, clipPath: "circle(50%)" }}
+              animate={
+                whereRUstate === 2
+                  ? {
+                      opacity: 1,
+                      x: 5,
+                      clipPath: "polygon(50% 0%, 100% 50%, 50% 100%",
+                    }
+                  : { opacity: 0.7, x: 0, clipPath: "circle(50%)" }
+              }
+              transition={{ duration: 0.25, delay: 0.5 }}
+            ></motion.div>
+            <motion.div
+              initial={{ x: 0 }}
+              animate={whereRUstate === 2 ? { x: 20 } : { x: 0 }}
+              transition={{ duration: 0.25, delay: 0.5 }}
+            >
+              <p>Overview</p>
+            </motion.div>{" "}
           </div>
           <div className="whereRUBox">
-            <motion.div className="whereRUsymbol3"></motion.div>
-            <p>Getting Started</p>
+            <motion.div
+              className="whereRUsymbol3"
+              initial={{ opacity: 0.7, x: 0, clipPath: "circle(50%)" }}
+              animate={
+                whereRUstate === 3
+                  ? {
+                      opacity: 1,
+                      x: 5,
+                      clipPath: "polygon(50% 0%, 100% 50%, 50% 100%",
+                    }
+                  : { opacity: 0.7, x: 0, clipPath: "circle(50%)" }
+              }
+              transition={{ duration: 0.25, delay: 0.5 }}
+            ></motion.div>
+            <motion.div
+              initial={{ x: 0 }}
+              animate={whereRUstate === 3 ? { x: 20 } : { x: 0 }}
+              transition={{ duration: 0.25, delay: 0.5 }}
+            >
+              <p>Start</p>
+            </motion.div>{" "}
           </div>
           <div className="whereRUBox">
-            <motion.div className="whereRUsymbol4"></motion.div>
-            <p>Next Steps</p>
+            <motion.div
+              className="whereRUsymbol4"
+              initial={{ opacity: 0.7, x: 0, clipPath: "circle(50%)" }}
+              animate={
+                whereRUstate === 4
+                  ? {
+                      opacity: 1,
+                      x: 5,
+                      clipPath: "polygon(50% 0%, 100% 50%, 50% 100%",
+                    }
+                  : { opacity: 0.7, x: 0, clipPath: "circle(50%)" }
+              }
+              transition={{ duration: 0.25, delay: 0.5 }}
+            ></motion.div>
+            <motion.div
+              initial={{ x: 0 }}
+              animate={whereRUstate === 4 ? { x: 20 } : { x: 0 }}
+              transition={{ duration: 0.25, delay: 0.5 }}
+            >
+              <p>Next Steps</p>
+            </motion.div>
           </div>
         </motion.div>
 

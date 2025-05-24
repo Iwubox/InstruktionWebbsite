@@ -240,6 +240,14 @@ body {
   font-family: "Orbitron", "Russo One", Arial, Helvetica, sans-serif;
 }
 
+.whereRUBox p {
+  background: linear-gradient(to bottom right, #fceeb5 0%, #ee786e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
 .whereRUsymbol1,
 .whereRUsymbol2,
 .whereRUsymbol3,
