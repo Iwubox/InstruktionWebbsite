@@ -100,7 +100,6 @@ function App() {
             <p>Contact</p>
           </div>
 
-          {/* TODO fix so that a covers the whole box instead of just the text */}
           <motion.div
             className="guideMenu"
             initial={{ opacity: 0 }}
@@ -184,24 +183,40 @@ function App() {
 
       <div className="banner">
         <div className="introMegaTextCointainer">
-          <div className="introMegaText">
-            <motion.div
-              className="MT1"
-              initial={{ y: 325, scale: 1.75 }}
-              animate={{ y: 0, scale: 1 }}
-              transition={{ delay: 2, duration: 0.75 }}
-            >
-              <p>Robo</p>
-            </motion.div>
-            <motion.div
-              className="MT2"
-              initial={{ y: 400, scale: 1.75 }}
-              animate={{ y: 0, scale: 1 }}
-              transition={{ delay: 2.1, duration: 0.75 }}
-            >
-              <p>Yap</p>
-            </motion.div>
-          </div>
+          <motion.div
+            className="MT1"
+            initial={{ y: "0", x: "0", scale: "1" }}
+            animate={{
+              y: ["0", "0", "-20vh"],
+              x: ["0", "-20vw", "-20vw"],
+              scale: 1,
+            }}
+            transition={{
+              delay: 2,
+              duration: 2,
+              times: [0, 0.5, 1],
+              ease: "easeInOut",
+            }}
+          >
+            <p>Robo</p>
+          </motion.div>
+          <motion.div
+            className="MT2"
+            initial={{ y: "0", x: "0", scale: "1" }}
+            animate={{
+              y: ["0", "0", "20vh"],
+              x: ["0", "20vw", "20vw"],
+              scale: 1,
+            }}
+            transition={{
+              delay: 2,
+              duration: 2,
+              times: [0, 0.5, 1],
+              ease: "easeInOut",
+            }}
+          >
+            <p>Yap</p>
+          </motion.div>
         </div>
 
         <motion.div
@@ -334,28 +349,26 @@ function App() {
       <div className="blackSpace"></div>
 
       <div className="overview" id="overview">
-        <div className="overviewContent">
-          <motion.div className="overviewTextBox">
-            <p>
-              There are many ways of creating your own AI chatbot. When creating
-              your own AI chatbot you will first need to pick a stack and in
-              this tutorial we will be using OpenAi's stack. These come with
-              different restrictions and limitations but by using OpenAIs api
-              you will not need a strong CPU or GPU. This tutorial will be using
-              the coding language python and you will need no prior knowlage for
-              this tutorial.
-            </p>
-          </motion.div>
+        <motion.div className="overviewTextBox">
+          <p>
+            There are many ways of creating your own AI chatbot. When creating
+            your own AI chatbot you will first need to pick a stack and in this
+            tutorial we will be using OpenAi's stack. These come with different
+            restrictions and limitations but by using OpenAIs api you will not
+            need a strong CPU or GPU. This tutorial will be using the coding
+            language python and you will need no prior knowlage for this
+            tutorial.
+          </p>
+        </motion.div>
 
-          <div className="overviewRight">
-            <div className="walk">
-              <p>Complete walkthough</p>
-              <video alt="walkthough video"></video>
-            </div>
+        <div className="overviewRight">
+          <div className="walk">
+            <p>Complete walkthough</p>
+            <video alt="walkthough video"></video>
+          </div>
 
-            <div className="overviewPicture">
-              <img alt="img about something"></img>
-            </div>
+          <div className="overviewPicture">
+            <img alt="img about something"></img>
           </div>
         </div>
       </div>

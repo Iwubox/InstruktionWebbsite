@@ -38,4 +38,13 @@ Python (blue, yellow)
 OpenAI (gray, black)
 
 Blue primary color
+0077B6
+00B4D8
 Yellow Secondary color
+FFF700
+
+gray
+AFAFAF
+808080
+545454
+2B2B2B

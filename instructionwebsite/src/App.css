@@ -181,6 +181,7 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: #808080;
 }
 
 .introMegaTextCointainer {
@@ -190,20 +191,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: row;
   background-color: #fcee0a;
-}
-
-.introMegaText {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  font-size: 15vh;
   font-family: "Russo One", "Orbitron", Arial, Helvetica, sans-serif;
+  font-size: calc(5.5vw + 5.5vh);
 }
 
 .MT1 {
-  height: 15vh;
   display: flex;
   align-items: center;
   background: linear-gradient(to bottom right, #fceeb5 0%, #ee786e 100%);
@@ -214,7 +208,6 @@ body {
 }
 
 .MT2 {
-  height: 15vh;
   display: flex;
   align-items: center;
   background: linear-gradient(to bottom right, #fceeb5 0%, #ee786e 100%);
@@ -288,7 +281,7 @@ body {
 
 .technoStyle {
   aspect-ratio: 11 / 9;
-  background-color: red;
+  background-color: rgb(229, 255, 0);
   width: 27.5vw;
   height: 45vh;
   position: absolute;
