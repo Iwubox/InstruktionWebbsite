@@ -28,3 +28,14 @@ https://www.cyberpunk.net/us/en/
 https://www.tiktok.com/@marcelodesignx/video/7503294520306502918?_r=1&_t=ZN-8wRhHPZZUKE
 https://www.tiktok.com/@marcelodesignx/video/7494729416547831095?_r=1&_t=ZN-8wRhNiMfXFO
 https://beebom.com/how-build-own-ai-chatbot-with-chatgpt-api/
+
+Efter respons från en kompis kommer jag ta mer hjälp av referenserna och ändra vissa saker
+
+Colortheme
+
+Python (blue, yellow)
+
+OpenAI (gray, black)
+
+Blue primary color
+Yellow Secondary color

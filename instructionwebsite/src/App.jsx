@@ -100,6 +100,7 @@ function App() {
             <p>Contact</p>
           </div>
 
+          {/* TODO fix so that a covers the whole box instead of just the text */}
           <motion.div
             className="guideMenu"
             initial={{ opacity: 0 }}
@@ -190,7 +191,7 @@ function App() {
               animate={{ y: 0, scale: 1 }}
               transition={{ delay: 2, duration: 0.75 }}
             >
-              <p>Making your own</p>
+              <p>Robo</p>
             </motion.div>
             <motion.div
               className="MT2"
@@ -198,7 +199,7 @@ function App() {
               animate={{ y: 0, scale: 1 }}
               transition={{ delay: 2.1, duration: 0.75 }}
             >
-              <p>AI chatbot</p>
+              <p>Yap</p>
             </motion.div>
           </div>
         </div>
@@ -328,17 +329,6 @@ function App() {
           animate={{}}
           transition={{ duration: 2, repeat: Infinity, repeatType: "loop" }}
         ></motion.div>
-
-        <motion.div
-          className="chatBotExample"
-          initial={{ y: 300 }}
-          animate={{ y: 0 }}
-          transition={{ delay: 2, duration: 0.75 }}
-        >
-          <div className="chatBotBox">
-            <p></p>
-          </div>
-        </motion.div>
       </div>
 
       <div className="blackSpace"></div>
