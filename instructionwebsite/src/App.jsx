@@ -1,18 +1,29 @@
 import "./App.css";
 import { useState, useRef, useEffect } from "react";
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useMotionValueEvent,
+  easeIn,
+  easeOut,
+} from "framer-motion";
 
 //imges
 import hamburgerPNG from "./resorces/hambugerMenu.png";
 import footerPNG from "./resorces/FromCyberpunksWebsite.png";
 
-/*TODO 
-Ändra get elementByClassName
+//Links
+import { useNavigate, BrowserRouter, Routes, Route } from "react-router-dom";
 
-
-*/
+import Step2 from "./pages/step2";
+import Step3 from "./pages/step3";
+import Step4 from "./pages/step4";
+import Step5 from "./pages/step5";
+import Step6 from "./pages/step6";
 
 function App() {
+  const navigate = useNavigate();
+
   //scroll logic -----
   const { scrollYProgress } = useScroll();
 
@@ -73,6 +84,14 @@ function App() {
 
   return (
     <div className="app">
+      <Routes>
+        <Route path="/step2" element={<Step2 />}></Route>
+        <Route path="/step3" element={<Step3 />}></Route>
+        <Route path="/step4" element={<Step4 />}></Route>
+        <Route path="/step5" element={<Step5 />}></Route>
+        <Route path="/step6" element={<Step6 />}></Route>
+      </Routes>
+
       <motion.div
         className="navbar"
         initial={{ y: -300 }}
@@ -113,7 +132,25 @@ function App() {
                 whileHover={{ x: -40 }}
               >
                 {" "}
-                <a href="#overview">1: Overview</a>
+                <div>1: Overview</div>{" "}
+              </motion.div>
+              <motion.div
+                className="guideMenuBox"
+                onClick={() => console.log("nooo nooo nooo")}
+                initial={{ x: 0 }}
+                whileHover={{ x: -40 }}
+              >
+                {" "}
+                <div>2: Installing python and pip</div>
+              </motion.div>
+              <motion.div
+                className="guideMenuBox"
+                initial={{ x: 0 }}
+                whileHover={{ x: -40 }}
+                onClick={() => navigate("/step2")}
+              >
+                {" "}
+                <div>3: Download VS code</div>
               </motion.div>
               <motion.div
                 className="guideMenuBox"
@@ -121,7 +158,7 @@ function App() {
                 whileHover={{ x: -40 }}
               >
                 {" "}
-                <a href="">2: Installing python and pip</a>
+                <div>4: Get API key</div>
               </motion.div>
               <motion.div
                 className="guideMenuBox"
@@ -129,28 +166,13 @@ function App() {
                 whileHover={{ x: -40 }}
               >
                 {" "}
-                <a href="">3: Download VS code</a>
-              </motion.div>
-              <motion.div
-                className="guideMenuBox"
-                initial={{ x: 0 }}
-                whileHover={{ x: -40 }}
-              >
-                {" "}
-                <a href="">4: Get API key</a>
-              </motion.div>
-              <motion.div
-                className="guideMenuBox"
-                initial={{ x: 0 }}
-                whileHover={{ x: -40 }}
-              >
-                {" "}
-                <a href="">5: Coding</a>
+                <div>5: Coding</div>
               </motion.div>
               <motion.div
                 className="guideMenuBox"
                 initial={{
                   x: 0,
+
                   clipPath: "polygon(0 0, 0 100%, 80% 100%, 100% 10%, 100% 0)",
                 }}
                 whileHover={{
@@ -159,7 +181,7 @@ function App() {
                 }}
               >
                 {" "}
-                <a href="">6: Personalize your chatbot</a>
+                <div>6: Personalize your chatbot</div>
               </motion.div>
             </div>
           </motion.div>
@@ -188,7 +210,7 @@ function App() {
             initial={{ y: "0", x: "0", scale: "1" }}
             animate={{
               y: ["0", "0", "-20vh"],
-              x: ["0", "-20vw", "-20vw"],
+              x: ["0", "-25vw", "-25vw"],
               scale: 1,
             }}
             transition={{
@@ -200,12 +222,22 @@ function App() {
           >
             <p>Robo</p>
           </motion.div>
+
+          <motion.div
+            className="bannerImg"
+            initial={{ y: "200vh", x: "-10vw", scale: "0" }}
+            animate={{ y: "0", scale: "1" }}
+            transition={{ delay: 2, duration: 2, ease: "easeInOut" }}
+          >
+            <img src={hamburgerPNG}></img>
+          </motion.div>
+
           <motion.div
             className="MT2"
             initial={{ y: "0", x: "0", scale: "1" }}
             animate={{
               y: ["0", "0", "20vh"],
-              x: ["0", "20vw", "20vw"],
+              x: ["0", "21vw", "21vw"],
               scale: 1,
             }}
             transition={{
@@ -223,7 +255,7 @@ function App() {
           className="whereRU"
           initial={{ x: -300 }}
           animate={{ x: 0 }}
-          transition={{ delay: 2, duration: 0.75 }}
+          transition={{ delay: 3.75, duration: 0.75, ease: easeOut }}
         >
           <div className="whereRUBox">
             <motion.div
@@ -321,9 +353,9 @@ function App() {
 
         <motion.div
           className="introFunFact"
-          initial={{ x: 1000 }}
+          initial={{ x: 300 }}
           animate={{ x: 0 }}
-          transition={{ delay: 2, duration: 0.75 }}
+          transition={{ delay: 3.75, duration: 0.75, ease: easeOut }}
         >
           <div className="introFunFactImg">
             <img alt="img here"></img>
