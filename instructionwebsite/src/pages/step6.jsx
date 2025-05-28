@@ -12,9 +12,9 @@ const Step6 = () => {
     <p>import gradio as gr</p>
     <p></p>
     <p>openai.api_key = "Enter you api key here"</p>
-    <p>messages = [
+    <pre><code>messages = [
     {"role": "system", "content": "You are a helpful and kind AI Assistant."},
-]   </p>
+]   </code></pre>
 <p> def chatbot(input):</p>
 <p>    if input:</p>
 <p>        messages.append({"role": "user", "content": input})</p>

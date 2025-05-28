@@ -1,18 +1,56 @@
 import "./App.css";
 import { useState, useRef, useEffect } from "react";
-import { motion } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useMotionValueEvent,
+  easeIn,
+  easeOut,
+} from "framer-motion";
 
 //imges
 import hamburgerPNG from "./resorces/hambugerMenu.png";
 import footerPNG from "./resorces/FromCyberpunksWebsite.png";
 
-/*TODO 
-Ändra get elementByClassName
+//Links
+import { useNavigate, BrowserRouter, Routes, Route } from "react-router-dom";
 
-
-*/
+import Step2 from "./pages/step2";
+import Step3 from "./pages/step3";
+import Step4 from "./pages/step4";
+import Step5 from "./pages/step5";
+import Step6 from "./pages/step6";
 
 function App() {
+  const navigate = useNavigate();
+
+  //scroll logic -----
+  const { scrollYProgress } = useScroll();
+
+  const [navBG, setNavBG] = useState(false);
+  const [whereRUstate, setWhereRUstate] = useState(1);
+
+  useMotionValueEvent(scrollYProgress, "change", (newScrollProgress) => {
+    if (newScrollProgress > 0.01) {
+      console.log(newScrollProgress);
+      setNavBG(true);
+    } else {
+      setNavBG(false);
+    }
+
+    if (newScrollProgress < 0.07) {
+      setWhereRUstate(1);
+    } else if (newScrollProgress < 0.5) {
+      setWhereRUstate(2);
+    } else if (newScrollProgress < 0.9) {
+      setWhereRUstate(3);
+    } else if (newScrollProgress <= 1) {
+      setWhereRUstate(4);
+    }
+
+    console.log(whereRUstate);
+  });
+
   let flipflop = true;
   let hamburgerMenu = () => {
     let hamburger = document.getElementsByClassName("hamburgerMenu")[0];
@@ -38,31 +76,6 @@ function App() {
     }
   };
 
-  let scrollLength = 0;
-
-  let symbol1 = true;
-  /* let symbol1 = useRef(null);
-    let symbol2 = useRef(null);
-    let symbol3 = useRef(null);
-    let symbol4 = useRef(null); 
-
-    useEffect(() => {
-      console.log(symbol1);
-
-      if (scrollLength < 300) {
-        symbol1.current.style.clipPath = "polygon(50% 0%, 100% 50%, 50% 100%)";
-      } else if (scrollLength > 300 && scrollLength < 600) {
-        symbol2.current.style.clipPath = "polygon(50% 0%, 100% 50%, 50% 100%)";
-      } else if (scrollLength > 600 && scrollLength < 900) {
-        symbol3.current.style.clipPath = "polygon(50% 0%, 100% 50%, 50% 100%)";
-      } else if (scrollLength > 900) {
-        symbol4.current.style.clipPath = "polygon(50% 0%, 100% 50%, 50% 100%)";
-      } else {
-        console.log("whereRUsymbols eror");
-      }
-    }, []);
-    */
-
   const [visable, setVisable] = useState(false);
 
   let guideMenu = () => {
@@ -71,12 +84,27 @@ function App() {
 
   return (
     <div className="app">
+      <Routes>
+        <Route path="/step2" element={<Step2 />}></Route>
+        <Route path="/step3" element={<Step3 />}></Route>
+        <Route path="/step4" element={<Step4 />}></Route>
+        <Route path="/step5" element={<Step5 />}></Route>
+        <Route path="/step6" element={<Step6 />}></Route>
+      </Routes>
+
       <motion.div
         className="navbar"
         initial={{ y: -300 }}
         animate={{ y: 0 }}
         transition={{ delay: 2, duration: 0.75 }}
       >
+        <motion.div
+          className="navBarBG"
+          initial={{ opacity: 0 }}
+          animate={navBG ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ delay: 0.2, duration: 0.75 }}
+        ></motion.div>
+
         <div className="navLeft">
           <div className="logo">RoboYap</div>
         </div>
@@ -104,7 +132,25 @@ function App() {
                 whileHover={{ x: -40 }}
               >
                 {" "}
-                <a href="#overview">1: Overview</a>
+                <div>1: Overview</div>{" "}
+              </motion.div>
+              <motion.div
+                className="guideMenuBox"
+                onClick={() => console.log("nooo nooo nooo")}
+                initial={{ x: 0 }}
+                whileHover={{ x: -40 }}
+              >
+                {" "}
+                <div>2: Installing python and pip</div>
+              </motion.div>
+              <motion.div
+                className="guideMenuBox"
+                initial={{ x: 0 }}
+                whileHover={{ x: -40 }}
+                onClick={() => navigate("/step2")}
+              >
+                {" "}
+                <div>3: Download VS code</div>
               </motion.div>
               <motion.div
                 className="guideMenuBox"
@@ -112,7 +158,7 @@ function App() {
                 whileHover={{ x: -40 }}
               >
                 {" "}
-                <a href="">2: Installing python and pip</a>
+                <div>4: Get API key</div>
               </motion.div>
               <motion.div
                 className="guideMenuBox"
@@ -120,28 +166,13 @@ function App() {
                 whileHover={{ x: -40 }}
               >
                 {" "}
-                <a href="">3: Download VS code</a>
-              </motion.div>
-              <motion.div
-                className="guideMenuBox"
-                initial={{ x: 0 }}
-                whileHover={{ x: -40 }}
-              >
-                {" "}
-                <a href="">4: Get API key</a>
-              </motion.div>
-              <motion.div
-                className="guideMenuBox"
-                initial={{ x: 0 }}
-                whileHover={{ x: -40 }}
-              >
-                {" "}
-                <a href="">5: Coding</a>
+                <div>5: Coding</div>
               </motion.div>
               <motion.div
                 className="guideMenuBox"
                 initial={{
                   x: 0,
+
                   clipPath: "polygon(0 0, 0 100%, 80% 100%, 100% 10%, 100% 0)",
                 }}
                 whileHover={{
@@ -150,7 +181,7 @@ function App() {
                 }}
               >
                 {" "}
-                <a href="">6: Personalize your chatbot</a>
+                <div>6: Personalize your chatbot</div>
               </motion.div>
             </div>
           </motion.div>
@@ -174,66 +205,157 @@ function App() {
 
       <div className="banner">
         <div className="introMegaTextCointainer">
-          <div className="introMegaText">
-            <motion.div
-              className="MT1"
-              initial={{ y: 325, scale: 1.75 }}
-              animate={{ y: 0, scale: 1 }}
-              transition={{ delay: 2, duration: 0.75 }}
-            >
-              <p>Making your own</p>
-            </motion.div>
-            <motion.div
-              className="MT2"
-              initial={{ y: 400, scale: 1.75 }}
-              animate={{ y: 0, scale: 1 }}
-              transition={{ delay: 2.1, duration: 0.75 }}
-            >
-              <p>AI chatbot</p>
-            </motion.div>
-          </div>
+          <motion.div
+            className="MT1"
+            initial={{ y: "0", x: "0", scale: "1" }}
+            animate={{
+              y: ["0", "0", "-20vh"],
+              x: ["0", "-25vw", "-25vw"],
+              scale: 1,
+            }}
+            transition={{
+              delay: 2,
+              duration: 2,
+              times: [0, 0.5, 1],
+              ease: "easeInOut",
+            }}
+          >
+            <p>Robo</p>
+          </motion.div>
+
+          <motion.div
+            className="bannerImg"
+            initial={{ y: "200vh", x: "-10vw", scale: "0" }}
+            animate={{ y: "0", scale: "1" }}
+            transition={{ delay: 2, duration: 2, ease: "easeInOut" }}
+          >
+            <img src={hamburgerPNG}></img>
+          </motion.div>
+
+          <motion.div
+            className="MT2"
+            initial={{ y: "0", x: "0", scale: "1" }}
+            animate={{
+              y: ["0", "0", "20vh"],
+              x: ["0", "21vw", "21vw"],
+              scale: 1,
+            }}
+            transition={{
+              delay: 2,
+              duration: 2,
+              times: [0, 0.5, 1],
+              ease: "easeInOut",
+            }}
+          >
+            <p>Yap</p>
+          </motion.div>
         </div>
 
         <motion.div
           className="whereRU"
           initial={{ x: -300 }}
           animate={{ x: 0 }}
-          transition={{ delay: 2, duration: 0.75 }}
+          transition={{ delay: 3.75, duration: 0.75, ease: easeOut }}
         >
           <div className="whereRUBox">
             <motion.div
               className="whereRUsymbol1"
               initial={{ opacity: 0.7, x: 0, clipPath: "circle(50%)" }}
               animate={
-                symbol1 && {
-                  opacity: 1,
-                  x: 5,
-                  clipPath: "polygon(50% 0%, 100% 50%, 50% 100%",
-                }
+                whereRUstate === 1
+                  ? {
+                      opacity: 1,
+                      x: 5,
+                      clipPath: "polygon(50% 0%, 100% 50%, 50% 100%",
+                    }
+                  : { opacity: 0.7, x: 0, clipPath: "circle(50%)" }
               }
-              transition={{ duration: 0.25, delay: 5 }}
+              transition={{ duration: 0.25, delay: 0.5 }}
             ></motion.div>
-            <p>Introduction</p>
+            <motion.div
+              initial={{ x: 0 }}
+              animate={whereRUstate === 1 ? { x: 20 } : { x: 0 }}
+              transition={{ duration: 0.25, delay: 0.5 }}
+            >
+              <p>Introduction</p>
+            </motion.div>{" "}
           </div>
           <div className="whereRUBox">
-            <motion.div className="whereRUsymbol2"></motion.div>
-            <p>Overview</p>
+            <motion.div
+              className="whereRUsymbol2"
+              initial={{ opacity: 0.7, x: 0, clipPath: "circle(50%)" }}
+              animate={
+                whereRUstate === 2
+                  ? {
+                      opacity: 1,
+                      x: 5,
+                      clipPath: "polygon(50% 0%, 100% 50%, 50% 100%",
+                    }
+                  : { opacity: 0.7, x: 0, clipPath: "circle(50%)" }
+              }
+              transition={{ duration: 0.25, delay: 0.5 }}
+            ></motion.div>
+            <motion.div
+              initial={{ x: 0 }}
+              animate={whereRUstate === 2 ? { x: 20 } : { x: 0 }}
+              transition={{ duration: 0.25, delay: 0.5 }}
+            >
+              <p>Overview</p>
+            </motion.div>{" "}
           </div>
           <div className="whereRUBox">
-            <motion.div className="whereRUsymbol3"></motion.div>
-            <p>Getting Started</p>
+            <motion.div
+              className="whereRUsymbol3"
+              initial={{ opacity: 0.7, x: 0, clipPath: "circle(50%)" }}
+              animate={
+                whereRUstate === 3
+                  ? {
+                      opacity: 1,
+                      x: 5,
+                      clipPath: "polygon(50% 0%, 100% 50%, 50% 100%",
+                    }
+                  : { opacity: 0.7, x: 0, clipPath: "circle(50%)" }
+              }
+              transition={{ duration: 0.25, delay: 0.5 }}
+            ></motion.div>
+            <motion.div
+              initial={{ x: 0 }}
+              animate={whereRUstate === 3 ? { x: 20 } : { x: 0 }}
+              transition={{ duration: 0.25, delay: 0.5 }}
+            >
+              <p>Start</p>
+            </motion.div>{" "}
           </div>
           <div className="whereRUBox">
-            <motion.div className="whereRUsymbol4"></motion.div>
-            <p>Next Steps</p>
+            <motion.div
+              className="whereRUsymbol4"
+              initial={{ opacity: 0.7, x: 0, clipPath: "circle(50%)" }}
+              animate={
+                whereRUstate === 4
+                  ? {
+                      opacity: 1,
+                      x: 5,
+                      clipPath: "polygon(50% 0%, 100% 50%, 50% 100%",
+                    }
+                  : { opacity: 0.7, x: 0, clipPath: "circle(50%)" }
+              }
+              transition={{ duration: 0.25, delay: 0.5 }}
+            ></motion.div>
+            <motion.div
+              initial={{ x: 0 }}
+              animate={whereRUstate === 4 ? { x: 20 } : { x: 0 }}
+              transition={{ duration: 0.25, delay: 0.5 }}
+            >
+              <p>Next Steps</p>
+            </motion.div>
           </div>
         </motion.div>
 
         <motion.div
           className="introFunFact"
-          initial={{ x: 1000 }}
+          initial={{ x: 300 }}
           animate={{ x: 0 }}
-          transition={{ delay: 2, duration: 0.75 }}
+          transition={{ delay: 3.75, duration: 0.75, ease: easeOut }}
         >
           <div className="introFunFactImg">
             <img alt="img here"></img>
@@ -245,52 +367,40 @@ function App() {
 
         <motion.div
           className="technoStyle"
-          style={{ backgroundColor: "red" }}
-          animate={{
-            backgroundColor: ["blue", "lightblue", "yellow"],
-          }}
+          animate={{}}
           transition={{ duration: 2, repeat: Infinity, repeatType: "loop" }}
         ></motion.div>
 
-        <motion.div className="technoStyle"></motion.div>
-
         <motion.div
-          className="chatBotExample"
-          initial={{ y: 300 }}
-          animate={{ y: 0 }}
-          transition={{ delay: 2, duration: 0.75 }}
-        >
-          <div className="chatBotBox">
-            <p></p>
-          </div>
-        </motion.div>
+          className="technoStyle2"
+          animate={{}}
+          transition={{ duration: 2, repeat: Infinity, repeatType: "loop" }}
+        ></motion.div>
       </div>
 
       <div className="blackSpace"></div>
 
       <div className="overview" id="overview">
-        <div className="overviewContent">
-          <motion.div className="overviewTextBox">
-            <p>
-              There are many ways of creating your own AI chatbot. When creating
-              your own AI chatbot you will first need to pick a stack and in
-              this tutorial we will be using OpenAi's stack. These come with
-              different restrictions and limitations but by using OpenAIs api
-              you will not need a strong CPU or GPU. This tutorial will be using
-              the coding language python and you will need no prior knowlage for
-              this tutorial.
-            </p>
-          </motion.div>
+        <motion.div className="overviewTextBox">
+          <p>
+            There are many ways of creating your own AI chatbot. When creating
+            your own AI chatbot you will first need to pick a stack and in this
+            tutorial we will be using OpenAi's stack. These come with different
+            restrictions and limitations but by using OpenAIs api you will not
+            need a strong CPU or GPU. This tutorial will be using the coding
+            language python and you will need no prior knowlage for this
+            tutorial.
+          </p>
+        </motion.div>
 
-          <div className="overviewRight">
-            <div className="walk">
-              <p>Complete walkthough</p>
-              <video alt="walkthough video"></video>
-            </div>
+        <div className="overviewRight">
+          <div className="walk">
+            <p>Complete walkthough</p>
+            <video alt="walkthough video"></video>
+          </div>
 
-            <div className="overviewPicture">
-              <img alt="img about something"></img>
-            </div>
+          <div className="overviewPicture">
+            <img alt="img about something"></img>
           </div>
         </div>
       </div>
